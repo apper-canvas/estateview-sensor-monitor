@@ -1,16 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import PropertyCard from "@/components/molecules/PropertyCard";
 import ApperIcon from "@/components/atoms/ApperIcon";
-const PropertyGrid = ({ properties, viewMode = 'grid', loading = false }) => {
+import PropertyCard from "@/components/molecules/PropertyCard";
+
+function PropertyGrid({ properties, viewMode, loading }) {
+  const skeletonCount = Array.from({ length: 6 }, (_, i) => i);
+  
   if (loading) {
-    const skeletonCount = viewMode === 'grid' ? 6 : 4;
     return (
       <div className={viewMode === 'grid' 
         ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         : "space-y-4"
       }>
-        {[...Array(skeletonCount)].map((_, index) => (
+        {[...Array(6)].map((_, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
