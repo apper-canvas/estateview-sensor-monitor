@@ -1,8 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
-import ApperIcon from "@/components/atoms/ApperIcon";
-import PropertyCard from "@/components/molecules/PropertyCard";
-
+import React from 'react'
+import { motion } from 'framer-motion'
+import ApperIcon from "@/components/ApperIcon";
+import PropertyCard from '@/components/molecules/PropertyCard'
 function PropertyGrid({ properties, viewMode, loading }) {
   const skeletonCount = Array.from({ length: 6 }, (_, i) => i);
   
