@@ -5,15 +5,6 @@ import Layout from './Layout';
 import { routeArray } from './config/routes';
 import NotFound from '@/components/pages/NotFound';
 
-// Import Apper SDK function
-const getUserDetailsByCompanyUserId = () => {
-  if (typeof window !== 'undefined' && window.Apper) {
-    return window.Apper.getUserDetailsByCompanyUserId();
-  }
-  console.warn('Apper SDK not loaded or getUserDetailsByCompanyUserId not available');
-  return Promise.resolve(null);
-};
-
 function App() {
 useEffect(() => { 
     const initializeUser = async () => {
