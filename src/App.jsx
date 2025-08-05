@@ -5,9 +5,26 @@ import Layout from './Layout';
 import { routeArray } from './config/routes';
 import NotFound from '@/components/pages/NotFound';
 
+// Import Apper SDK function
+const getUserDetailsByCompanyUserId = () => {
+  if (typeof window !== 'undefined' && window.Apper) {
+    return window.Apper.getUserDetailsByCompanyUserId();
+  }
+  console.warn('Apper SDK not loaded or getUserDetailsByCompanyUserId not available');
+  return Promise.resolve(null);
+};
+
 function App() {
-  useEffect(() => { 
-    getUserDetailsByCompanyUserId()
+useEffect(() => { 
+    const initializeUser = async () => {
+      try {
+        await getUserDetailsByCompanyUserId();
+      } catch (error) {
+        console.error('Failed to get user details:', error);
+      }
+    };
+    
+    initializeUser();
   }, [])
 
   return (
