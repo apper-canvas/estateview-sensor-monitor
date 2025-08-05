@@ -7,15 +7,8 @@ import NotFound from '@/components/pages/NotFound';
 
 function App() {
 useEffect(() => { 
-    const initializeUser = async () => {
-      try {
-        await getUserDetailsByCompanyUserId();
-      } catch (error) {
-        console.error('Failed to get user details:', error);
-      }
-    };
-    
-    initializeUser();
+    // TODO: Implement user initialization when user service is available
+    console.log('App initialized');
   }, [])
 
   return (
