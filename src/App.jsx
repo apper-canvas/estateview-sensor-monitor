@@ -4,7 +4,6 @@ import { ToastContainer } from 'react-toastify';
 import Layout from './Layout';
 import { routeArray } from './config/routes';
 import NotFound from '@/components/pages/NotFound';
-import abc from 'xyz';
 
 function App() {
   return (
