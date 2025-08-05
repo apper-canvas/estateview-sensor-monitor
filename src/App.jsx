@@ -8,7 +8,8 @@ import NotFound from '@/components/pages/NotFound';
 function App() {
 useEffect(() => { 
     // TODO: Implement user initialization when user service is available
-    console.log('App initialized');
+  console.log('App initialized');
+    getData()
   }, [])
 
   return (
